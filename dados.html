@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./style.css">
+    <title>Dados</title>
+</head>
+<body>
+    <div id="game">
+        <img src="/dados/images/srdado.png" alt="" id="cabeca">
+        <h1>Jogue o Dado</h1>
+        <div id="resultado"></div>
+        <div id="dado">
+            <img src="/dados/images/dice.gif" alt="" id="fotodado">
+        </div>
+        <div>
+            <h1 id="txt2">Aposte:</h1>
+            <button onclick="functionp()" id="par" >PAR</button>
+            <button onclick="functioni()" id="impar">ÍMPAR</button>
+        </div>
+        
+
+    </div>
+
+
+    <script>
+        var txt2 = document.getElementById("txt2")
+        var fotodado = document.getElementById("fotodado")
+        var cabeca = document.getElementById("cabeca")
+        var cabecagif = '/dados/images/srdado.gif'
+        var dadoImgs = [
+            '/dados/images/1.png',
+            '/dados/images/2.png',
+            '/dados/images/3.png',
+            '/dados/images/4.png',
+            '/dados/images/5.png',
+            '/dados/images/6.png'
+        ];
+
+        function functionp() {
+            var number = Math.floor(Math.random() * 6) + 1;
+            cabeca.setAttribute('src', cabecagif)
+
+            console.log(number)
+            if (0 == number%2){
+                console.log(`Você venceu, é par`)
+                fotodado.setAttribute('src', dadoImgs[number - 1]) 
+                txt2.innerText = 'Você venceu!'
+            }
+            else{
+                console.log(`Você perdeu, é impar`)
+                fotodado.setAttribute('src', dadoImgs[number - 1])
+                txt2.innerText = 'Você perdeu!'
+            }
+
+        }
+
+
+        
+
+
+
+
+// let mensagem = document.querySelector("#auth")
+// let criarParagrafo = document.createElement('p')
+
+
+
+
+
+// if (senhaPrompt != senha && userPrompt != login){ 
+//     criarParagrafo.textContent = 'Login ou senha incorretos.'
+//     mensagem.append(criarParagrafo)
+// }
+
+// else{
+//     criarParagrafo.style.color = '#00f100'
+//     criarParagrafo.textContent = 'Logado com sucesso'
+//     mensagem.append(criarParagrafo)
+// }
+
+
+
+
+
+// var button = document.querySelector('button');
+// var tabelaNomes = document.querySelector('#tabela-nomes tbody');
+
+// button.addEventListener('click', function () {
+//     var nome = prompt("Seu nome");
+//     if (nome) { 
+//         var novaLinha = document.createElement('tr');
+//         var novaCelula = document.createElement('td');
+//         novaCelula.textContent = nome;
+//         novaLinha.appendChild(novaCelula);
+//         tabelaNomes.appendChild(novaLinha);
+//     }
+// });
+
+    </script>
+</body>
+</html>
